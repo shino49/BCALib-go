@@ -7,5 +7,5 @@ import (
 func main() {
 	rt := router.RouterInit()
 
-	rt.Run()
+	rt.Run(":9999")
 }

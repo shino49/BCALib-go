@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetBookList(c *gin.Context) {
+func getBookList(c *gin.Context) {
 	order := c.DefaultQuery("order", "id")
 	limit, errLimit := strconv.Atoi(c.DefaultQuery("limit", "50"))
 	filter := c.DefaultQuery("filter", "none")

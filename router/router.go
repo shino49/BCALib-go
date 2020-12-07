@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/ytz4178/BCALib-go/app/book"
+	"github.com/ytz4178/BCALib-go/app/v1/book"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,7 +11,7 @@ func RouterInit() *gin.Engine {
 
 	v1 := r.Group("/v1")
 	{
-		v1.GET("/book/list", book.GetBookList)
+		book.AppUrlSet(v1)
 	}
 
 	return r
