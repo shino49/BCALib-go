@@ -8,7 +8,11 @@ import (
 
 func RouterInit() *gin.Engine {
 	r := gin.Default()
+	r.NoMethod(handleNotFound)
+	r.NoRoute(handleNotFound)
+	r.Use(errHandler())
 
+	r.Static("/static", "./static")
 	v1 := r.Group("/v1")
 	{
 		book.AppUrlSet(v1)
