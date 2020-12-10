@@ -1,10 +1,14 @@
 package book
 
-type bookMeta struct {
-	id       int64
-	title    string
-	author   string
-	wordNum  int64
-	coverPic string
-	filePath string
+import (
+	"gorm.io/gorm"
+)
+
+type BookMeta struct {
+	gorm.Model
+	Title    string
+	Author   string
+	WordNum  int64
+	CoverPic string
+	FilePath string
 }
