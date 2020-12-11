@@ -13,6 +13,7 @@ func RouterInit() *gin.Engine {
 	r.Use(errHandler())
 
 	r.Static("/static", "./static")
+	r.Static("/html", "./html")
 	v1 := r.Group("/v1")
 	{
 		book.AppUrlSet(v1)
